@@ -114,18 +114,21 @@ public class Izziv_4 {
                     swap(k, l);
                     l++;
                 }else if (table[k] >= q){
-                    stevilo_primerjav++;
+                    stevilo_primerjav += 2;
                     while (table[g] > q && k < g){
                         stevilo_primerjav++;
                         g--;
                     }
+                    stevilo_primerjav++;
                     swap(k, g);
                     g--;
                     if (table[k] < p){
-                        stevilo_primerjav++;
                         swap(k, l);
                         l++;
                     }
+                    stevilo_primerjav++;
+                }else{
+                    stevilo_primerjav += 2;
                 }
                 k++;
             }
@@ -164,28 +167,28 @@ public class Izziv_4 {
 /*
 Čas
 Dolžina seznama     Random tabela  Urejena tabela
-32                  865            527
-64                  1794           1756
-128                 4073           6072
-256                 9169           22278
-512                 20065          85389
-1024                44210          334939
+32                  739            559
+64                  1508           1855
+128                 3377           6485
+256                 7569           23347
+512                 16604          88505
+1024                36525          345665
 
 Število zamenjav
 Dolžina seznama     Random tabela  Urejena tabela
-32                  63             32   (zamenjave so se zgodile v "p in q to final position")
-64                  150            64
+32                  63             32
+64                  152            64
 128                 352            128
-256                 808            256
-512                 1822           512
-1024                4085           1024
+256                 816            256
+512                 1825           512
+1024                4079           1024
 
 Število primerjav
 Dolžina seznama     Random tabela  Urejena tabela
-32                  61             16
-64                  154            32
-128                 378            64
-256                 891            128
-512                 2054           256
-1024                4691           512
+32                  143            496
+64                  362            2016
+128                 884            8128
+256                 2099           32640
+512                 4873           130816
+1024                11056          523776
 */
