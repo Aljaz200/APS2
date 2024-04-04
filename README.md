@@ -8,4 +8,5 @@ Seznam rešenih izzivov:
 - Izziv 1: [Eksperimentalno ovrednotenje zahtevnosti],
 - Izziv 2: [Mediana median],
 - Izziv 3: [Timsort],
-- Izziv 4: [Dual pivot quicksort].
+- Izziv 4: [Dual pivot quicksort],
+- Izziv 5: [Maximalna vsota podzaporedja].
