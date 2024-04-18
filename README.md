@@ -11,4 +11,5 @@ Seznam rešenih izzivov:
 - Izziv 4: [Dual pivot quicksort],
 - Izziv 5: [Maximalna vsota podzaporedja],
 - Izziv 6: [Množenje matrik - Strassenov algoritem],
-- Izziv 6 opcijska naloga: [Strassenov algoritem vs standardno množenje matrik].
+- Izziv 6 opcijska naloga: [Strassenov algoritem vs standardno množenje matrik],
+- Izziv 7: [Primitivni koreni in Vandermondova matrika].
