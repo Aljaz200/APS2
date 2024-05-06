@@ -13,4 +13,5 @@ Seznam rešenih izzivov:
 - Izziv 6: [Množenje matrik - Strassenov algoritem],
 - Izziv 6 opcijska naloga: [Strassenov algoritem vs standardno množenje matrik],
 - Izziv 7: [Primitivni koreni in Vandermondova matrika],
-- Izziv 8: [Hitra Fourierova transformacija (FFT)].
+- Izziv 8: [Hitra Fourierova transformacija (FFT)],
+- Izziv 9: [Ford-Fulkersonov algoritem (maksimalni pretok)].
