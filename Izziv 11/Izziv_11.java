@@ -49,7 +49,8 @@ public class Izziv_11{
         //System.out.println("Zaporedje velikosti: " + zaporedje.size());
 
         startTime = System.nanoTime();
-        kromatksa_stevila2(povezave, n);
+        String izpis =  kromatksa_stevila2(povezave, n);
+        System.out.print(izpis);
         endTime = System.nanoTime();
         long duration = (endTime - startTime);
         //System.out.println("Cas zaporedje: " + duration1 / 1000000 + "ms");
@@ -69,7 +70,8 @@ public class Izziv_11{
         }
     }    
 
-    public static void kromatksa_stevila2(int[][] povezave, int n){
+    public static String kromatksa_stevila2(int[][] povezave, int n){
+        String izpis = "";
         int velikost = 1 << n;
         int[] kromatska = new int[velikost];
 
@@ -90,7 +92,7 @@ public class Izziv_11{
             kromatska[indeks] = min1;
             indeksi[indeks] = zap;
             //System.out.println("Zap: " + zap + " Indeks: " + indeks);
-            izpisi1(graf, min1);
+            izpis += izpisi1(graf, min1);
             zap++;
         }
         int[] izpisano = new int[n];
@@ -98,7 +100,9 @@ public class Izziv_11{
         for (int i = 0; i < n; i++) {
             zadnja_uporabljena[i] = 1;
         }
-        izpisi_zadnje(zadnja_uporabljena, n, povezave, kromatska, izpisano);
+        String temptemp = "";
+        izpis += izpisi_zadnje(zadnja_uporabljena, n, povezave, kromatska, izpisano, temptemp);
+        return izpis;
 
     }
 
@@ -116,40 +120,49 @@ public class Izziv_11{
         return stevilo;
     }
 
-    private static void izpisi1(int[] graf, int kromatsko) {
-        System.out.print("{");
+    private static String izpisi1(int[] graf, int kromatsko) {
+        String temp1 = "{";
         int temp = 0;
         for (int i = 0; i < graf.length; i++) {
             if (graf[i] == 1) {
-                System.out.print(i);
+                //System.out.print(i);
+                temp1 += i;
                 temp = i;
                 break;
             }
         }
         for (int i = temp + 1; i < graf.length; i++) {
             if (graf[i] == 1) {
-                System.out.print("," + i);
+                //System.out.print("," + i);
+                temp1 += "," + i;
             }
         }
-        System.out.println("} : " + kromatsko);
+        //System.out.println("} : " + kromatsko);
+        temp1 += "} : " + kromatsko + "\n";
+        return temp1;
     }
 
-    private static void izpisi2(int[] graf) {
-        System.out.print("{");
+    private static String izpisi2(int[] graf) {
+        String temp1 = "{";
+        //System.out.print("{");
         int temp = 0;
         for (int i = 0; i < graf.length; i++) {
             if (graf[i] == 1) {
-                System.out.print(i);
+                //System.out.print(i);
+                temp1 += i;
                 temp = i;
                 break;
             }
         }
         for (int i = temp + 1; i < graf.length; i++) {
             if (graf[i] == 1) {
-                System.out.print("," + i);
+                //System.out.print("," + i);
+                temp1 += "," + i;
             }
         }
-        System.out.println("}");
+        //System.out.println("}");
+        temp1 += "}\n";
+        return temp1;
     }
 
     private static int vrni_stevilo(int[] graf){
@@ -330,7 +343,7 @@ public class Izziv_11{
         return stevilo + 1;
     }
 
-    public static void izpisi_zadnje(int[] zadnja_uporabljena, int n, int[][] povezave, int[] kromatska, int[] izpisano){
+    public static String izpisi_zadnje(int[] zadnja_uporabljena, int n, int[][] povezave, int[] kromatska, int[] izpisano, String izpis){
         boolean koncaj = true;
         int[] temp = new int[n];
         for (int i = 0; i < n; i++) {
@@ -340,7 +353,8 @@ public class Izziv_11{
         }
         int izpisii = vrni_stevilo(temp);
         if (izpisii != 0) {
-            izpisi2(temp);
+            izpis += izpisi2(temp);
+            //izpisi2(temp);
         }
         //izpisi(izpisano);
         for (int i = 0; i < n; i++) {
@@ -354,7 +368,7 @@ public class Izziv_11{
             }
         }
         if (koncaj) {
-            return;
+            return izpis;
         }
         int[] graf = new int[n];
         for (int i = 0; i < n; i++) {
@@ -388,7 +402,8 @@ public class Izziv_11{
             stevilo_grafa = indeksi[stevilo_grafa];  
             neodvisna = neodvisna_mnozica2(graf, povezave, n, stevilo_grafa, zap);
         }
-        izpisi_zadnje(zadnja_uporabljena, n, povezave, kromatska, izpisano);
+        izpis = izpisi_zadnje(zadnja_uporabljena, n, povezave, kromatska, izpisano, izpis);
+        return izpis;
     }
 
 }
