@@ -16,4 +16,5 @@ Seznam rešenih izzivov:
 - Izziv 8: [Hitra Fourierova transformacija (FFT)],
 - Izziv 9: [Ford-Fulkersonov algoritem (maksimalni pretok)],
 - Izziv 10: [Bellman-Fordov algoritem (najkrajša pot)],
-- Izziv 11: [Barvanje grafov].
+- Izziv 11: [Barvanje grafov],
+- Izziv 12: [Hammingtonov cikel - utežen graf].
